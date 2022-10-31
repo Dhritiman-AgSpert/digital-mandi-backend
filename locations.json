@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Zone-1",
+        "from": "Khanapara",
+        "to": "Ganeshguri",
+        "via": "GS Road",
+        "city": "Guwahati"
+    },
+    {
+        "name": "Zone-2",
+        "from": "Basistha",
+        "to": "Ganeshguri",
+        "via": "Lastgate",
+        "city": "Guwahati"
+    },
+    {
+        "name": "Zone-3",
+        "from": "Games Vill",
+        "to": "Ganesh Mandir",
+        "via": "Hatigaon",
+        "city": "Guwahati"
+    },
+    {
+        "name": "Zone-4",
+        "from": "Lokhra",
+        "to": "Lalganesh",
+        "via": "Sawkuchi",
+        "city": "Guwahati"
+    },
+    {
+        "name": "Zone-5",
+        "from": "Lalganesh",
+        "to": "Ganesh Mandir",
+        "via": "Kahilipara",
+        "city": "Guwahati"
+    }
+]
