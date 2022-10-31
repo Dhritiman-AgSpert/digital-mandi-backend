@@ -1,0 +1,1229 @@
+{
+	"info": {
+		"_postman_id": "f2d6f3b1-57b0-4aed-a936-f064cd1f93b6",
+		"name": "OLD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20319657"
+	},
+	"item": [
+		{
+			"name": "KYC",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "api/kyc/all",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/all",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/verify",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"625f9f694a8ac75b9abca162\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/verify",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"verify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/unverify",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"62506159f36195a89346eaf0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/unverify",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"unverify"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/set_pp_status",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"625f9f694a8ac75b9abca162\",\r\n    \"status\": \"Verified\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/set_pp_status",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"set_pp_status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/set_pan_status",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"625f9f694a8ac75b9abca162\",\r\n    \"status\": \"Verified\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/set_pan_status",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"set_pan_status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/set_adhr_status",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"625f9f694a8ac75b9abca162\",\r\n    \"status\": \"Verified\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/set_adhr_status",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"set_adhr_status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "api/kyc/create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pp_filepath\": \"/mnt/d/Zomandi/Product pics/tomato.jpeg\",\r\n    \"pan_filepath\": \"/mnt/d/Zomandi/Product pics/tomato.jpeg\",\r\n    \"adhr_filepath\": \"/mnt/d/Zomandi/Product pics/cabbage.jpeg\",\r\n    \"pan_number\": \"asdfghj\",\r\n    \"adhr_number\": \"asdfghj\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/create",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/view",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/view",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"view"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/edit_pp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"625f9f694a8ac75b9abca162\",\r\n    \"pp_filepath\": \"/mnt/d/Zomandi/Product pics/brokoli.jpeg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/edit_pp",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"edit_pp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/edit_pan_pic",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"625f9f694a8ac75b9abca162\",\r\n    \"pan_filepath\": \"/mnt/d/Zomandi/Pictures with faces/Faces/001_a.png\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/edit_pan_pic",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"edit_pan_pic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/edit_pan_number",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"625f9f694a8ac75b9abca162\",\r\n    \"pan_number\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/edit_pan_number",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"edit_pan_number"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/edit_adhr",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"625f9f694a8ac75b9abca162\",\r\n    \"adhr_filepath\": \"/mnt/d/Zomandi/Pictures with faces/Faces/001_a.png\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/edit_adhr",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"edit_adhr"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/kyc/edit_adhr_number",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"kyc_id\": \"625f9f694a8ac75b9abca162\",\r\n    \"adhr_number\": \"someadhrnmbr\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/kyc/edit_adhr_number",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"kyc",
+										"edit_adhr_number"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Fulfilment",
+					"item": [
+						{
+							"name": "order/deliverers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{fulfil_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/order/deliverers",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"order",
+										"deliverers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "order/assign",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{fulfil_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderId\": \"6270c6d50a51b881ec210165\",\r\n    \"delivererId\": \"626f6b78810e153d2c2b721e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/order/assign",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"order",
+										"assign"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delivery",
+					"item": [
+						{
+							"name": "order/deliveries",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{deliv_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/order/deliveries",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"order",
+										"deliveries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "order/complete_deliveries",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/order/complete_deliveries",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"order",
+										"complete_deliveries"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "api/payment/all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/payment/all",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"payment",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "api/product/all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/all",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/product/one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cabbage\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/one",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"one"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Client",
+					"item": [
+						{
+							"name": "api/auth/signin user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"rest3@gmail.com\",\r\n    \"password\": \"m4w1lIHm\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/signin",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/user/edit_profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"8285300530@outlook.com\",\r\n    \"username\": \"8285300530 user\",\r\n    \"address1\": \"30\",\r\n    \"address2\": \"somewhere,\",\r\n    \"address3\": \"anywhere\",\r\n    \"pincode\": \"781022\",\r\n    \"location\": \"Guwahati\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/user/edit_profile",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"user",
+										"edit_profile"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "OLD",
+					"item": [
+						{
+							"name": "api/auth/phone",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"8723997331\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/phone",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"phone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/auth/otp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"8723997331\",\r\n    \"otp\": \"3785\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/otp",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/auth/all_otp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/all_otp",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"all_otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/auth/reset_otp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"8723997331\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/reset_otp",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"reset_otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/auth/signup user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Restauranto de uno\",\r\n    \"email\": \"uno@gmail.com\",\r\n    \"address\": \"uno@gmail.com\",\r\n    \"pincode\": \"781022\",\r\n    \"phone\": \"0000000001\",\r\n    \"password\": \"qwerty12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/signup",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/auth/signup deliv",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Delivery Agent 2\",\r\n    \"email\": \"deliveryagent2@gmail.com\",\r\n    \"password\": \"qwerty12\",\r\n    \"phone\": \"9000000002\",\r\n    \"vehicle_no\": \"AS-00A-0002\",\r\n    \"roles\": [\"delivery\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/signup",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/auth/signup fulfil",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Fulfillment Agent\",\r\n    \"email\": \"fulfillmentagent@gmail.com\",\r\n    \"password\": \"qwerty12\",\r\n    \"roles\": [\"fulfillment\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/signup",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/auth/signin deliv",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Delivery Agent 2\",\r\n    \"password\": \"qwerty12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/signin",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/auth/signin fulfil",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Fulfillment Agent\",\r\n    \"password\": \"qwerty12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/auth/signin",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/test/admin",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDM4OTUxNzUxMWQwNDJkNDdjNzJmYyIsImlhdCI6MTY0ODU5MzczNSwiZXhwIjoxNjQ4NjgwMTM1fQ.88-LekPeH700d-g5cDTsgGZKSMymXe-GfolVJNEIqVs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Dhriti\",\r\n    \"password\": \"qwerty12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/test/admin",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"test",
+										"admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/test/all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Dhriti\",\r\n    \"password\": \"qwerty12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/test/all",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"test",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "api/test/user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDcxNzI3NzhhYmQwMDE1ZTNiZjA5OSIsImlhdCI6MTY0ODgyNjk1NSwiZXhwIjoxNjQ4OTEzMzU1fQ.aB0JaddqRl0JjRWRGTBbaNc1I7YUoHgb0Diw1POgUMw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Dhriti\",\r\n    \"password\": \"qwerty12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/test/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"test",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/test/del_all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/test/del_all",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"test",
+										"del_all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/test/locations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{admin_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/test/locations",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"test",
+										"locations"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "api/auth/signup admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Zomandi Admin\",\r\n    \"phone\": \"9999999999\",\r\n    \"email\": \"zomandiadmin@gmail.com\",\r\n    \"location\": \"Guwahati\",\r\n    \"address1\": \"admin address line1\",\r\n    \"pincode\": \"781022\",\r\n    \"password\": \"qwerty12\",\r\n    \"roles\": [\"admin\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/auth/signup",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "api/wallet/view",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}api/wallet/view",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"wallet",
+								"view"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1211 @@
+{
+	"info": {
+		"_postman_id": "33cf4589-123d-4753-b992-d0118580a1a1",
+		"name": "Admin App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20319657"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "api/auth/signin admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"zomandiadmin@gmail.com\",\r\n    \"password\": \"zomandiadminpassw0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/auth/admin_signin",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"auth",
+								"admin_signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/admin_signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"businessname\": \"Zomandi Admin\",\r\n    \"ownername\": \"Zomandi Admin\",\r\n    \"phone\": \"9876543210\",\r\n    \"email\": \"zomandiadmin@gmail.com\",\r\n    \"zone_id\": \"62d24b6051cf776d791afa84\",\r\n    \"address\": \"Zomandi Admin address\",\r\n    \"pincode\": \"781022\",\r\n    \"password\": \"zomandiadminpassw0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/auth/admin_signup",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"auth",
+								"admin_signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "zone/cities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}zone/cities",
+							"host": [
+								"{{BASE_URL}}zone"
+							],
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "zone/by_city",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\": \"Guwahati\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}zone/by_city",
+							"host": [
+								"{{BASE_URL}}zone"
+							],
+							"path": [
+								"by_city"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/clients",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"zone_id\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/auth/clients",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"auth",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/create_client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"businessname\": \"Restaurant7\",\r\n    \"ownername\": \"Owner4\",\r\n    \"phone\": \"9876543210\",\r\n    \"email\": \"seven@gmail.com\",\r\n    \"zone_id\": \"62d24b6051cf776d791afa84\",\r\n    \"address\": \"Some long address\",\r\n    \"pincode\": \"781022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/auth/create_client",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"auth",
+								"create_client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/edit_client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"62d17a44330e741d7737b4af\",\r\n    \"businessname\": \"Restaurant1\",\r\n    \"ownername\": \"Owner1\",\r\n    \"phone\": \"9876543211\",\r\n    \"zone_id\": \"62d24b6051cf776d791afa84\",\r\n    \"address\": \"Some long address\",\r\n    \"pincode\": \"781022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/auth/edit_client",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"auth",
+								"edit_client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/delete_client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"63341e1849f66152ac4d85c0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/auth/delete_client",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"auth",
+								"delete_client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/auth/delete_all_clients(suicide bomber)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"63341e1849f66152ac4d85c0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/auth/delete_all_clients",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"auth",
+								"delete_all_clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/per_client_pending",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"63190bb9466fef585e570ff4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/order/per_client_pending",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"per_client_pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/per_client_complete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"63190bb9466fef585e570ff4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/order/per_client_complete",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"per_client_complete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "zone/create_from_json",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filename\": \"/home/dhriti/Zomandi/zomandi-backend/locations.json\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}zone/create_from_json",
+							"host": [
+								"{{BASE_URL}}zone"
+							],
+							"path": [
+								"create_from_json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "del all zones",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}zone/del_all",
+							"host": [
+								"{{BASE_URL}}zone"
+							],
+							"path": [
+								"del_all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Items",
+			"item": [
+				{
+					"name": "api/product/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Parsley\",\r\n    \"pic_filename\": \"a\",\r\n    \"min_qty\": 1,\r\n    \"unit\": \"Bunch(s)\",\r\n    \"price\": 30,\r\n    \"type\": \"Exotic\",\r\n    \"in_stock\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/create",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/product/categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/categories",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/product/categorised",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/categorised",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"categorised"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api/product/categorised (all products)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/product/categorised",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"product",
+										"categorised"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8080"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "x-access-token, Origin, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3039"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bdf-yRzoz3BJ3kiejl0mMyxZh0WkNFI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jun 2022 07:14:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"62a19b1215f4b3178114b727\",\n        \"name\": \"Beans\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/beans.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b728\",\n        \"name\": \"Cabbage\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/cabbage.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b729\",\n        \"name\": \"Capsicum\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/capsicum.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72a\",\n        \"name\": \"Carrot\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/carrot.jpg\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72b\",\n        \"name\": \"Long-chilli\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/long-chilli.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72c\",\n        \"name\": \"Motor\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/motor.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72d\",\n        \"name\": \"Squash\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/squash.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72e\",\n        \"name\": \"Ada\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/ada.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"Regular\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72f\",\n        \"name\": \"Aloo\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/aloo.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"Regular\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b730\",\n        \"name\": \"Dhonia\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/dhonia.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"Regular\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b731\",\n        \"name\": \"Kesa-jolokia\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/kesa-jolokia.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"Regular\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b732\",\n        \"name\": \"Nemu\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/nemu.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"Regular\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b733\",\n        \"name\": \"Nohoru\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/nohoru.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"Regular\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b734\",\n        \"name\": \"Piyaj\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/piyaj.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"Regular\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b735\",\n        \"name\": \"Tomato\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/tomato.jpg\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"Regular\",\n        \"in_stock\": \"false\"\n    }\n]"
+						},
+						{
+							"name": "api/product/categorised (English products)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{user_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category\": \"English\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/product/categorised",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"product",
+										"categorised"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8080"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "x-access-token, Origin, Content-Type, Accept"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1427"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"593-Xf5dDUOenqHk8wOgBkfR4ghQIK4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 Jun 2022 07:15:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"62a19b1215f4b3178114b727\",\n        \"name\": \"Beans\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/beans.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b728\",\n        \"name\": \"Cabbage\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/cabbage.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b729\",\n        \"name\": \"Capsicum\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/capsicum.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72a\",\n        \"name\": \"Carrot\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/carrot.jpg\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72b\",\n        \"name\": \"Long-chilli\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/long-chilli.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72c\",\n        \"name\": \"Motor\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/motor.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    },\n    {\n        \"_id\": \"62a19b1215f4b3178114b72d\",\n        \"name\": \"Squash\",\n        \"pic_url\": \"https://zomandi-backend-storage.s3.ap-south-1.amazonaws.com/products/squash.png\",\n        \"min_qty\": 1,\n        \"price\": 60,\n        \"type\": \"English\",\n        \"in_stock\": \"false\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "api/product/del_one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Brokoli\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/del_one",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"del_one"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/product/del_all",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/del_all",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"del_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/product/edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"62d3d7904c2a68bb19c5f43c\",\r\n    \"price\": 90.00,\r\n    \"unit\": \"Kg(s)\",\r\n    \"min_qty\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/edit",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/product/toggle_in_stock",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": \"62d3d7904c2a68bb19c5f43c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/toggle_in_stock",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"toggle_in_stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/product/units",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}api/product/units",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/product/create_from_json",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filename\": \"/home/dhriti/Zomandi/products/zomandi_products.json\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/product/create_from_json",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"product",
+								"create_from_json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "order/all_pending",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}api/order/all_pending",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"all_pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/all_complete",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}api/order/all_complete",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"all_complete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/toggle_complete_placed",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"6332e9ff6ca00ce37407dcf4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/order/toggle_complete_placed",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"toggle_complete_placed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/toggle_paid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"6332e9ff6ca00ce37407dcf4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/order/toggle_paid",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"toggle_paid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/admin_create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"6326180d0f7002adb7272d45\",\r\n            \"quantity\": 3\r\n        }\r\n    ],\r\n    \"delivery_date\": \"2022-09-28\",\r\n    \"userId\": \"631f15c0c985d4038f6f93a7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/order/admin_create",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"admin_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/remove_item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"62d552ce0473aa2abe3d1b2c\",\r\n    \"productId\": \"62d3d7904c2a68bb19c5f436\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/order/remove_item",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"remove_item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/add_item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"633477a949f66152ac4d8c0a\",\r\n    \"productId\": \"6326180d0f7002adb7272d45\",\r\n    \"quantity\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/order/add_item",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"add_item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/del_one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": \"62d43ddd3cefb9783d0bafce\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/order/del_one",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"del_one"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/del_all",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/order/del_all",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"del_all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mandi",
+			"item": [
+				{
+					"name": "mandi/status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}mandi/status",
+							"host": [
+								"{{BASE_URL}}mandi"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mandi/toggle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{admin_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}mandi/toggle",
+							"host": [
+								"{{BASE_URL}}mandi"
+							],
+							"path": [
+								"toggle"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "98f1c349-224b-4607-8323-68e7e3673d9e",
+		"name": "Common",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20319657"
+	},
+	"item": [
+		{
+			"name": "/api/test/info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{user_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}api/test/info",
+					"host": [
+						"{{BASE_URL}}api"
+					],
+					"path": [
+						"test",
+						"info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "ba1abd9e-937c-4f2b-bc6b-c7018378a243",
+		"name": "Cllient App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20319657"
+	},
+	"item": [
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "api/cart/view",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}api/cart/view",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"cart",
+								"view"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/cart/add_item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"62d3d7904c2a68bb19c5f436\",\r\n            \"qty\": 3\r\n        },\r\n        {\r\n            \"productId\": \"62d3d7904c2a68bb19c5f437\",\r\n            \"qty\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/cart/add_item",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"cart",
+								"add_item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/cart/remove_item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"6326180d0f7002adb7272d3b\",\r\n    \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/cart/remove_item",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"cart",
+								"remove_item"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "order/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}api/order/create",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/my",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}api/order/my",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"my"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order/my_pending",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{user_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}api/order/my_pending",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"order",
+								"my_pending"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "api/auth/signin client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rest3@gmail.com\",\r\n    \"password\": \"m4w1lIHm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}api/auth/signin",
+							"host": [
+								"{{BASE_URL}}api"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
